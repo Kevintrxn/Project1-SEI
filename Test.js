@@ -45,13 +45,18 @@ backgroundSprite.draw();
 function startGame() {
     canvas.width = 1024;
     canvas.height = 550;
-    const c = canvas.getContext("2d"); 
-    player = new Player(c);
+
     let backgroundIntro = new Sprite({
         position: { x: 0, y: 0 }, 
         width: canvas.width,
         height: canvas.height, 
     });
+
+    player = new Player(c);
+    player.width = 150
+    player.height = 150
+    player.x = 100
+    player.y = 100
 
     gameBackground = new Gamescreen(c);
     gameBackground.width = canvas.width,

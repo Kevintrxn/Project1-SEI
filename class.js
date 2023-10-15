@@ -1,17 +1,17 @@
 //player animations and initial position for start screen 
 class Player {
-    constructor(position, width, height, c,) {
+    constructor(c) {
         this.width = 150;
         this.height = 150;
         this.currentState = 'idle';
         this.currentFrame = 0;
-        this.c = c;
-        this.x = 100;
+        this.ctx = c;
+        this.x = 300;
         this.y = 300;
         this.lastDirection = 'right';
         this.position = {
             x: 150,
-            y: 150
+            y: 150,
         };
         this.velocity = {
             x: 0,
@@ -35,9 +35,13 @@ class Player {
     }
     draw() {
         if (this.visible) {
-            c.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);  
+            this.ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);  
+            this.ctx.strokeStyle = 'red';
+            this.ctx.lineWidth = 2;
+            this.ctx.strokeRect(this.position.x, this.position.y, this.width, this.height);
         }
     }
+    
     animateState(state) {
         if (this.currentState !== state) {
             this.currentState = state;
@@ -192,6 +196,9 @@ draw() {
                 this.x, this.y, 
                 this.width, this.height
             );
+            this.c.strokeStyle = "blue"; 
+            this.c.lineWidth = 3;
+            this.c.strokeRect(this.x, this.y, this.width, this.height);
         }
     }
         
@@ -236,6 +243,9 @@ class Gate {
     draw(){
         if (this.visible){
             c.drawImage(this.images[this.currentFrame], this.x, this.y, this.width, this.height);
+            this.c.strokeStyle = "blue"; 
+            this.c.lineWidth = 3;
+            this.c.strokeRect(this.x, this.y, this.width, this.height);
         }
     }
     resize(newWidth, newHeight) {
