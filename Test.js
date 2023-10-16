@@ -78,7 +78,8 @@ function startGame() {
 
     function animate() {
         animationId = window.requestAnimationFrame(animate);
-        playerInsideGate(player, gate, gameBackground, cloud); 
+        playerInsideGate(player, gate, gameBackground, cloud);
+        playerOnStandingCloud(player,cloud); 
 
 
         c.clearRect(0, 0, canvas.width, canvas.height);

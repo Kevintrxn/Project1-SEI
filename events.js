@@ -54,8 +54,11 @@ function gameplay(gate, sprite) {
     }
 }
 
-function playerOnCloud(player, cloud) {
-    if (
+function playerOnStandingCloud(player, cloud) {
+    if (!cloud.visible) {
+        return;
+    }
+    else if (
         player.position.x < cloud.x + cloud.width &&
         player.position.x + player.width > cloud.x &&
         player.position.y + player.height > cloud.y &&

@@ -6,8 +6,8 @@ class Player {
         this.currentState = 'idle';
         this.currentFrame = 0;
         this.ctx = c;
-        this.x = 300;
-        this.y = 300;
+        this.x = 100;
+        this.y = 100;
         this.lastDirection = 'right';
         this.position = {
             x: 150,
