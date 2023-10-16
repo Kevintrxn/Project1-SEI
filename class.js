@@ -33,6 +33,7 @@ class Player {
         this.image = new Image();
         this.image.src = this.states.idle[0];
         this.isOnCloud = false;
+        this.lastYPosition = this.position.y; 
     }
     draw() {
         if (this.visible) {
@@ -75,6 +76,7 @@ class Player {
         this.frameDelay = 0;
     }
     update() {
+        this.lastYPosition = this.position.y; 
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
         if (this.velocity.y < 0) { 

@@ -65,7 +65,7 @@ function playerOnStandingCloud(player, cloud) {
         player.position.y + player.height > cloud.y &&
         player.position.y < cloud.y + cloud.height
     ) {
-        if (player.velocity.y >= 0) {
+        if (player.lastYPosition + player.height <= cloud.y && player.velocity.y >= -2) {
             player.position.y = cloud.y - player.height;
             player.velocity.y = 0;
             player.isOnCloud = true; 
