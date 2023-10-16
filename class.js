@@ -32,6 +32,7 @@ class Player {
         };
         this.image = new Image();
         this.image.src = this.states.idle[0];
+        this.isOnCloud = false;
     }
     draw() {
         if (this.visible) {

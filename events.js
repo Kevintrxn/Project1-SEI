@@ -2,7 +2,7 @@
 function onKeyDown(event) {
     switch (event.key) {
         case "w": 
-            if (player && player.velocity.y === 0) { 
+            if (player && player.velocity.y === 0 || player.isOnCloud) { 
                 player.velocity.y = -20; 
             }
             break;
@@ -56,6 +56,7 @@ function gameplay(gate, sprite) {
 
 function playerOnStandingCloud(player, cloud) {
     if (!cloud.visible) {
+        player.isOnCloud = false; 
         return;
     }
     else if (
@@ -67,7 +68,10 @@ function playerOnStandingCloud(player, cloud) {
         if (player.velocity.y >= 0) {
             player.position.y = cloud.y - player.height;
             player.velocity.y = 0;
+            player.isOnCloud = true; 
         }
+    } else {
+        player.isOnCloud = false;
     }
 }
 
