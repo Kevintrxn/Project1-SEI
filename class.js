@@ -76,7 +76,7 @@ class Player {
         this.frameDelay = 0;
     }
     update() {
-        this.lastYPosition = this.position.y; 
+        this.lastYPosition = this.position.y;
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
         if (this.velocity.y < 0) { 
@@ -313,8 +313,8 @@ class Gate {
         gameBackground.visible = true;
     }
     resetPlayer(player) {
-        player.position.x = 100; 
-        player.position.y = canvas.height - 160; 
+        player.position.x = 25; 
+        player.position.y = 150; 
     }
 }
 

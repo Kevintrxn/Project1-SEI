@@ -71,9 +71,9 @@ function startGame() {
     gate.x = 720
 
     cloud = new Cloud(c); 
-    cloud.width = 130 
+    cloud.width = 160 
     cloud.height = 75
-    cloud.x = 100 
+    cloud.x = 25 
     cloud.y = 400
 
     function animate() {

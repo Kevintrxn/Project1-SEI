@@ -26,6 +26,8 @@ function onKeyUp(event) {
     }
 }
 
+window.addEventListener("keydown", onKeyDown);
+window.addEventListener("keyup", onKeyUp);
 
 function playerInsideGate(player, gate) {
     if (
@@ -74,6 +76,3 @@ function playerOnStandingCloud(player, cloud) {
         player.isOnCloud = false;
     }
 }
-
-window.addEventListener("keydown", onKeyDown);
-window.addEventListener("keyup", onKeyUp);
